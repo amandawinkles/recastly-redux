@@ -18,8 +18,6 @@ var handleVideoSearch = (q) => {
     });
   }
 };
-//call dispatch with actions
 
 export default handleVideoSearch;
 
-// dispatch.handleVideoSearch(query)
