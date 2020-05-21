@@ -10,6 +10,9 @@ const store = createStore(
     exampleVideoData,
     applyMiddleware(thunk)
   );
+  //initialState
+
+  //let initialState = { currentVideo, videoList }
 
 /*
 export default const store =

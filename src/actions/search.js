@@ -13,7 +13,7 @@ var handleVideoSearch = (q) => {
   }
   return (dispatch) => {//callback inside to return actions from other files? //return dispatch w/actions?
     searchYouTube(options, (items) => {
-      dispatch(changeVideo(items[0])); //CHANGE_VIDEO
+      dispatch(changeVideo(items[0]));
       dispatch(changeVideoList(items));
     });
   }
