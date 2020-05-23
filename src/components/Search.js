@@ -1,37 +1,25 @@
 import React from 'react';
+import store from '../store/store.js';
+import handleVideoSearch from '../actions/search.js';
 
- 
-class Search extends React.Component {
-  constructor(props) {
-    super(props);
+//make functional component now
+//pass in handleInputChange through props
+//still have props here, but state change gets passed on to the reducer
+//props.handleVideoSearch
 
-    this.state = {
-      value: ''
-    };
-  }
 
-  handleInputChange(e) {
-    this.props.getYouTubeVideos(e.target.value);
-    this.setState({
-      value: e.target.value
-    });
-  }
-
-  render() {
-    return (
-      <div className="search-bar form-inline">
-        <input
-          className="form-control"
-          type="text"
-          value={this.state.value}
-          onChange={this.handleInputChange.bind(this)}
-        />
-        <button className="btn hidden-sm-down">
-          <span className="glyphicon glyphicon-search"></span>
-        </button>
-      </div>
-    );
-  }
-}
+var Search = ({handleSearchInputChange}) => (
+  <div className="search-bar form-inline">
+    <input
+      className="form-control"
+      type="text"
+      //value={this.state.value}
+      onChange={(e) => handleSearchInputChange(e.target.value)} //store.dispatch? store.getState? //will send off to reducer //(e) => handleVideoSearch(e.target.value)
+    />
+    <button className="btn hidden-sm-down">
+      <span className="glyphicon glyphicon-search"></span>
+    </button>
+  </div>
+);
 
 export default Search;
