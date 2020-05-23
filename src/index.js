@@ -4,9 +4,9 @@ import App from './components/App.js';
 import searchYouTube from './lib/searchYouTube.js';
 import YOUTUBE_API_KEY from './config/youtube.js';
 import { Provider} from 'react-redux';
-import { Router } from 'react-redux';
-import { Route } from 'react-redux';
-
+// import { Router } from 'react-redux';
+// import { Route } from 'react-redux';
+import { Router, Route } from 'react-router-dom'
 import handleVideoSearch from './actions/search.js';
 import store from './store/store.js';
 import VideoListContainer from './containers/VideoListContainer.js';
@@ -58,4 +58,6 @@ ReactDOM.render(
 
   document.getElementById('app')
 );
+
+<Router history={history}>
 */
