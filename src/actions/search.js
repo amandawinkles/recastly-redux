@@ -2,6 +2,7 @@ import searchYouTube from '../lib/searchYouTube.js';
 import changeVideoList from './videoList.js';
 import changeVideo from './currentVideo.js';
 import YOUTUBE_API_KEY from '../config/youtube.js';
+import store from '../store/store.js';
 
 
 var handleVideoSearch = (q) => {
@@ -13,8 +14,10 @@ var handleVideoSearch = (q) => {
   }
   return (dispatch) => {//callback inside to return actions from other files? //return dispatch w/actions?
     searchYouTube(options, (items) => {
+
       dispatch(changeVideo(items[0]));
       dispatch(changeVideoList(items));
+      // console.log(store.getState());
     });
   }
 };
